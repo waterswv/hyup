@@ -1,0 +1,17 @@
+Sign Up
+
+<%= form_for @new_user do |f| %>
+    <div>
+        <%= f.text_field :name, placeholder: "Full Name" %>
+    </div>
+    <div>
+      <%= f.text_field :phone, placeholder: "Phone Number" %>
+    </div>
+    <div>
+      <%= f.text_field :email, placeholder: "Email Address" %>
+    </div>
+    <div>
+      <%= f.password_field :password_digest, placeholder: "Type Password" %>
+    </div>
+    <%= f.submit "Sign Up" %>
+  <% end %>
