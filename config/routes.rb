@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get "/users/new", to: "users#new", as:"new_user"
   post "/users", to: "users#create"
   #get "/users/:id", to:"users#show", as:"user"
-  get "/users/:id/edit", to:"users#edit", as:"edit_user"
+  #get "/users/:id/edit", to:"users#edit", as:"edit_user"
   #post "/users/:id", to:"user#edit"
   #delete "/users/:id", to:"users#destroy"
 
