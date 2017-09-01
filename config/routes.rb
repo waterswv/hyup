@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "listing#index"
+  root to: "listings#index"
   get "/listings", to: "listings#index", as:"listings"
   get "/listings/new", to: "listings#new", as:"new_listing"
   post "/listings", to: "listings#create"
@@ -16,7 +16,9 @@ Rails.application.routes.draw do
   #post "/users/:id", to:"user#edit"
   #delete "/users/:id", to:"users#destroy"
 
-  post "/login", to: "session#login"
-  get "/logout", to:"session#destroy"
+  get "/login", to: "sessions#new"
+  post "/sessions", to: "sessions#create"
+  get "/logout", to:"sessions#destroy"
+
 
 end
