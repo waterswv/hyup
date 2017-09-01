@@ -1,0 +1,15 @@
+
+<% @listings.each do |listing| %>
+
+  <div class="row" id='list_item'>
+    <div class="col s12">
+      <img src="http://www.sftodo.com/images/photo-contest/painted-ladies-san-francisco.jpg" alt="House" height='100px' width='100px' style='float: left'>
+      <h5><a href="<% listing_path(listing.id) %>"<% listing.title  %> %></a></h5>
+      <p><%= number_to_currency(listing.rent, :unit => “$”) %> - <% listing.address%></p>
+      <p>Available: <% listing.available_date  %> </p>
+      <p class="listing_desc"><% listing.description %></p>
+      <p class="listing_contact"> If interested contact: <% contact_phone %>, <a href="mailto:<% listing.contact_email %>">listing.contact_email</a>  
+    </div>
+  </div>
+
+<% end %>
