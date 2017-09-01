@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "listing#index"
+  root to: "listings#index"
   get "/listings", to: "listings#index", as:"listings"
   get "/listings/new", to: "listings#new", as:"new_listing"
   post "/listings", to: "listings#create"
