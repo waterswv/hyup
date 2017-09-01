@@ -23,6 +23,8 @@ gem 'ffaker', '~> 2.6.0'
 gem 'table_print', '~> 1.5.6'
 # Use CoffeeScript for .coffee assets and views
 gem 'better_errors', '~> 2.1', '>= 2.1.1'
+# add paperclip gem for imagemagick
+gem 'paperclip', '~> 5.0.0'
 
 gem 'binding_of_caller'
 gem 'coffee-rails', '~> 4.2'
