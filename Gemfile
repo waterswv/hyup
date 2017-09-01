@@ -22,6 +22,7 @@ gem 'ffaker', '~> 2.6.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'better_errors', '~> 2.1', '>= 2.1.1'
 
+gem 'binding_of_caller'
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
