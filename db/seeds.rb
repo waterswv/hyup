@@ -5,3 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'ffaker'
+
+10.times do
+  Listing.create(
+    name: FFaker.Name.name,
+    address: FFaker::Address.street_address + ',' + FFaker::Address.city + ',' + FFaker::Address.state + ',' + FFaker::Address.zip_code
+    title: FFaker.DizzleIpsum.words,
+    rent: FFaker.Address.building_number,
+    available_date:  Date::MONTHNAMES[1+rand(11)],
+    description: FFaker.DizzleIpsum.paragraph,
+    contact_phone: FFaker.PhoneNumber.phone_number
+    contact_email: FFaker.Internet.email
+    city: 'San Francisco'  
+  )
+end
