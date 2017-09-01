@@ -1,6 +1,8 @@
 class ListingsController < ApplicationController
   def index
     @listings = Listing.all
+    flash[:error] = "error message"
+
   end
 
   def new
@@ -24,7 +26,7 @@ class ListingsController < ApplicationController
     @listing = Listing.find_by_id(listing_id)
   end
 
-    def update
+  def update
     listing_id = params[:id]
     listing = Listing.find_by_id(listing_id)
     listing.update_attributes(listing_params)

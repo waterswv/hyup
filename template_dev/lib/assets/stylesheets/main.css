@@ -1,0 +1,9 @@
+body {font-family: fantasy; font-size: 12px; color: #000; margin: 0; padding:0;}
+h5 {margin-bottom: 10px; padding 0; font-size: 18px; font-weight: 700; }
+a {color: black; text-decoration: none;}
+a:hover {color: light-blue; text-decoration: underline;}
+p {margin-bottom: 3px; font-weight: 700;}
+#list_item {border: 1px solid black; margin-bottom: 10px; padding: 5px}
+img {padding: 5px}
+.gutter {background-color: teal; height: 100%;}
+#mainsec {border-radius: 25px}

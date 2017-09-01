@@ -1,16 +1,20 @@
-<%= content_for :title do %>All Current Listings <% end %>
+<%= content_for :title do %>All Current Listings<% end %>
 <% @listings.each do |listing| %>
-  <div class="row" id='list_item'>
+  <div class="row list_item">
     <div class="col s12">
       <img src="http://www.sftodo.com/images/photo-contest/painted-ladies-san-francisco.jpg"
-        alt="House" height='100px' width='100px' style='float: left'>
-      <h5><a href="<% listing_path(listing.id) %>" ><% listing.title  %></a></h5>
-      <p><% number_to_currency(listing.rent) %> - <% listing.address%></p>
-      <p>Available: <% listing.available_date  %> </p>
-      <p class="listing_desc"><% listing.description %></p>
+        alt="<%= @listings.title %>" class="listing_img">
+      <h5 class="listing_headline">
+        <a href="<%= listing_path(listing.id) %>" class="listing_title" ><%= listing.title  %></a>
+         - <%= number_to_currency(listing.rent) %>/mo.
+      </h5>
+      <p><%= listing.address%></p>
+      <p><span class="listing_bold">Available:</span> <%= listing.available_date  %> </p>
+      <p class="listing_desc"><%= listing.description %></p>
       <p class="listing_contact">
-        If interested contact: <% listing.contact_phone %>,
-        <a href="mailto:<% listing.contact_email %>">listing.contact_email</a>
+        <span class="listing_bold">If interested contact:</span>
+        <a href="mailto:<%= listing.contact_email %>" class="listing_email"><%= listing.contact_email %></a>,
+        (<%= listing.contact_phone %>)
       </p>
     </div>
   </div>
