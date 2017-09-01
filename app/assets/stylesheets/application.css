@@ -12,6 +12,6 @@
  *
  *= require_tree .
  *= require_self
- *= require_reset.css
- *= require_main.css
+ *= require reset.css
+ *= require main.css
  */
