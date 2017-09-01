@@ -31,13 +31,24 @@
       </div>
     </div>
     <div class="row">
-      <div class="input-field col s6">
+      <div class="input-field col s4">
         <%= f.text_field :contact_phone %>
         <%= label_tag 'Contact Phone' %>
       </div>
-      <div class="input-field col s6">
+      <div class="input-field col s4">
         <%= f.email_field :contact_email %>
         <%= label_tag 'Contact Email' %>
+      </div>
+      <div class="input-field col s4">
+        <div class="file-field input-field">
+          <div class="btn">
+            <span>Upload Image</span>
+            <%= f.file_field :image %>
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text">
+          </div>
+        </div>
       </div>
     </div>
     <div class="row">
