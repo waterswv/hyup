@@ -4,29 +4,29 @@
   <%= form_for @listing do |f| %>
     <div class="row">
       <div class="input-field col s12">
-        <%= f.text_field :title %>
+        <%= f.text_field :title, :class => "validate", :required => "" %>
         <%= label_tag 'title' %>
       </div>
     </div>
     <div class="row">
       <div class="input-field col s6">
-      <%= f.text_field :rent %>
+      <%= f.text_field :rent, :class => "validate", :required => "" %>
       <%= label_tag 'Rent' %>
     </div>
       <div class="input-field col s6">
-        <%= f.text_field :available_date %>
+        <%= f.text_field :available_date, :class => "validate", :required => "" %>
           <%= label_tag 'Available Date' %>
       </div>
     </div>
     <div class="row">
       <div class="input-field col s12">
-        <%= f.text_field :address %>
+        <%= f.text_field :address, :class => "validate", :required => "" %>
         <%= label_tag 'Address' %>
       </div>
     </div>
     <div class="row">
       <div class="input-field col s12">
-        <%= f.text_area :description, :class => "materialize-textarea" %>
+        <%= f.text_area :description, :class => "materialize-textarea", :class => "validate", :required => "" %>
         <%= label_tag 'Description' %>
       </div>
     </div>
@@ -36,7 +36,7 @@
         <%= label_tag 'Contact Phone' %>
       </div>
       <div class="input-field col s4">
-        <%= f.email_field :contact_email %>
+        <%= f.email_field :contact_email, :class => "validate", :required => "" %>
         <%= label_tag 'Contact Email' %>
       </div>
       <div class="input-field col s4">
@@ -53,7 +53,7 @@
     </div>
     <div class="row">
       <div class="input-field col s12">
-        <%= f.text_field :city %>
+        <%= f.text_field :city, :value => "San Francisco", :disabled => "" %>
         <%= label_tag 'City' %>
       </div>
     </div>
