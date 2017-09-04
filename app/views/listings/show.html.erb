@@ -24,6 +24,6 @@
         (<%= @listing.contact_phone %>)
       </p>
     </div>
-    <%= button_to "Delete", @listing, method: :delete %>
+    <a class="btn-floating btn-large waves-effect waves-light red" data-method="delete" href="/listings/<%=@listing.id%>"><i class="material-icons">delete</i></a>
   </div>
 </div>
