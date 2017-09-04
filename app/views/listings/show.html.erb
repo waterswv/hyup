@@ -13,7 +13,7 @@
         <span class="listing_title_show"><%= @listing.title  %></span>
         - <%= number_to_currency(@listing.rent) %>/mo.
       </h2>
-      <img src="http://www.sftodo.com/images/photo-contest/painted-ladies-san-francisco.jpg"
+      <img src="<%=@listing.image.url(:medium) %>"
       </div>
       <p class="listing_show"><%= @listing.address%></p>
       <p class="listing_show"><span class="listing_bold">Available:</span> <%= @listing.available_date  %> </p>
