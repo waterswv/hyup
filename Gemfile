@@ -25,6 +25,8 @@ gem 'table_print', '~> 1.5.6'
 gem 'better_errors', '~> 2.1', '>= 2.1.1'
 # add paperclip gem for imagemagick
 gem 'paperclip', '~> 5.0.0'
+#add gravatar gem for user profile image
+gem 'gravtastic'
 
 gem 'binding_of_caller'
 gem 'coffee-rails', '~> 4.2'
@@ -45,8 +47,12 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
+
   gem 'selenium-webdriver'
+  #adds testing 
+  gem 'rspec-rails', '~> 3.6'
 end
+
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.

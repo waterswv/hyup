@@ -8,8 +8,14 @@ class UsersController < ApplicationController
     user = User.new(user_params)
 
     if user.save
+      flash[:success] = "Successful login"
       session[:user_id] = user.id
-      redirect_to "/users/new"
+      redirect_to "/listings"
+
+    else
+      @new_user = user
+      flash[:error] = user.errors.full_messages.join(" ")
+      render('/users/new')
     end
 
   end

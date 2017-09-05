@@ -1,61 +1,61 @@
 <%= content_for :title do %>Create Listing<% end %>
 
-<%= content_for :page_header do %>Create Listing<% end %>
-
-<%= form_for @listing do |f| %>
-  <div class="row">
-    <div class="input-field col s12">
-      <%= f.text_field :title %>
-      <%= label_tag 'title' %>
+<div class="row">
+  <%= form_for @listing do |f| %>
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.text_field :title, :class => "validate", :required => "" %>
+        <%= label_tag 'title' %>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="input-field col s6">
-    <%= f.text_field :rent %>
-    <%= label_tag 'Rent' %>
-  </div>
-    <div class="input-field col s6">
-      <%= f.text_field :available_date %>
-        <%= label_tag 'Available Date' %>
+    <div class="row">
+      <div class="input-field col s6">
+      <%= f.text_field :rent, :class => "validate", :required => "" %>
+      <%= label_tag 'Rent' %>
     </div>
-  </div>
-  <div class="row">
-    <div class="input-field col s12">
-      <%= f.text_field :address %>
-      <%= label_tag 'Address' %>
+      <div class="input-field col s6">
+        <%= f.text_field :available_date, :class => "validate", :required => "" %>
+          <%= label_tag 'Available Date' %>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="input-field col s12">
-      <%= f.text_area :description, :class => "materialize-textarea" %>
-      <%= label_tag 'Description' %>
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.text_field :address, :class => "validate", :required => "" %>
+        <%= label_tag 'Address' %>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="input-field col s4">
-      <%= f.text_field :contact_phone %>
-      <%= label_tag 'Contact Phone' %>
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.text_area :description, :class => "materialize-textarea", :class => "validate", :required => "" %>
+        <%= label_tag 'Description' %>
+      </div>
     </div>
-    <div class="input-field col s4">
-      <%= f.email_field :contact_email %>
-      <%= label_tag 'Contact Email' %>
-    </div>
-    <div class="input-field col s4">
-      <div class="file-field input-field">
-        <div class="btn">
-          <span>Upload Image</span>
-          <%= f.file_field :image %>
-        </div>
-        <div class="file-path-wrapper">
-          <input class="file-path validate" type="text">
+    <div class="row">
+      <div class="input-field col s4">
+        <%= f.text_field :contact_phone %>
+        <%= label_tag 'Contact Phone' %>
+      </div>
+      <div class="input-field col s4">
+        <%= f.email_field :contact_email, :class => "validate", :required => "" %>
+        <%= label_tag 'Contact Email' %>
+      </div>
+      <div class="input-field col s4">
+        <div class="file-field input-field">
+          <div class="btn">
+            <span>Upload Image</span>
+            <%= f.file_field :image %>
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text">
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="input-field col s12">
-      <%= f.text_field :city %>
-      <%= label_tag 'City' %>
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.text_field :city, :value => "San Francisco", :disabled => "" %>
+        <%= label_tag 'City' %>
+      </div>
     </div>
   </div>
 
