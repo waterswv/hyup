@@ -1,7 +1,7 @@
 <% if current_user %>
   <li><a href="<%= listings_path %>">All Listings</a></li>
-  <li><a href="/listing/edit/<%= current_user.id %>">My Property Listing</a></li>
-  <li><a href="/user/edit/<%= current_user.id %>">My Landlord Profile</a></li>
+  <li><a href="/listing/<%= current_user.id %>/edit">My Property Listing</a></li>
+  <li><a href="/users/<%= current_user.id %>">My Landlord Profile</a></li>
   <li><a href="/logout">Logout</a></li>
   <li class="chip">
     <a href="/user/edit/<%= current_user.id %>">

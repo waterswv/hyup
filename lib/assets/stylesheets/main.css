@@ -172,3 +172,9 @@ img.listing_google_map_show {
   display: block;
   margin-top: 25px;
 }
+
+img.user_gravatar {
+  max-width: 150px;
+  float: left;
+  margin-right: 10px;
+}
