@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>HYUP Housong for the Rest of Us - <%= yield :title %></title>
+    <title>HYUP Housing for the Rest of Us - <%= yield :title %></title>
     <%= csrf_meta_tags %>
 
     <!-- Compiled and minified CSS -->
@@ -17,18 +17,29 @@
   </head>
 
   <body class="blue-grey lighten-0">
-    <nav>
-      <div class="nav-wrapper blue-grey lighten-1">
-       <a href="#" class="brand-logo">Logo</a>
-      <% render('/users/user_auth') %>
-     </div>
-    </nav>
-
-
     <div class="container">
-      <%= render('/helpers/error_messages') %>
-    <%= yield %>
+      <header>
+
+        <%= render('/helpers/navbar') %>
+
+        <a href="/" class="brand-logo">
+          <%= image_tag("logo_HYUP.jpg", class: "logo", alt: "HYUP logo") %>
+        </a>
+      </header>
+
+      <main>
+        <h1><%= yield :page_header %></h1>
+
+        <div class="error_message">
+          <%= render('helpers/error_messages') %>
+        </div>
+
+        <%= yield %>
+      </main>
+
+      <footer>
+        &copy; copyright 2017 HYUP Partners LLC.
+      </footer>
     </div>
   </body>
 </html>
-<%= console %>
