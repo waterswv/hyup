@@ -13,7 +13,7 @@ class ListingsController < ApplicationController
     listing_params = params.require(:listing).permit(:address, :title, :rent, :available_date, :description, :contact_phone, :contact_email, :image, :city)
     listing = Listing.new(listing_params)
     if listing.save
-      redirect_to listings_path(listing)
+      redirect_to listing_path(listing)
     end
   end
 

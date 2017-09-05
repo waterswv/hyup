@@ -1,4 +1,7 @@
 <%= content_for :title do %>All Current Listings<% end %>
+
+<%= content_for :page_header do %>All Current Listings<% end %>
+
 <% @listings.each do |listing| %>
   <div class="row list_item">
     <div class="col s12">
@@ -19,5 +22,4 @@
       </p>
     </div>
   </div>
-
 <% end %>
