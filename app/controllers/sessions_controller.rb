@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
   # app/controllers/sessions_controller.rb
     def new
       @user = User.new
+      redirect_to listings_path
     end
 
     def create

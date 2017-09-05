@@ -1,0 +1,15 @@
+<% if current_user %>
+  <li><a href="<%= listings_path %>">All Listings</a></li>
+  <li><a href="/listing/edit/<%= current_user.id %>">My Property Listing</a></li>
+  <li><a href="/user/edit/<%= current_user.id %>">My Landlord Profile</a></li>
+  <li><a href="/logout">Logout</a></li>
+  <li class="chip">
+    <a href="/user/edit/<%= current_user.id %>">
+      <img src="https://en.gravatar.com/userimage/2721275/d570d6c3f6c984c00bd8fb44c98b30da.png?size=32" alt="gravatar of <%= current_user.name %>" />
+      <%= current_user.name %>
+    </a>
+  </li>
+<% else %>
+  <li><a href="/users/new">Sign Up to list your property</a></li>
+  <li><a href="/login">Landlord Login</a></li>
+<% end %>
