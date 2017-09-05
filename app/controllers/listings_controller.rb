@@ -2,7 +2,6 @@ class ListingsController < ApplicationController
   def index
     @listings = Listing.all
     flash[:error] = "error message"
-
   end
 
   def new
