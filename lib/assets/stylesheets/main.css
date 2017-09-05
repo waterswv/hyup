@@ -103,6 +103,11 @@ p.listing_show {
   font-size: 16px;
 }
 
+.field_with_errors {
+  position: relative;
+  margin-top: 1rem;
+}
+
 
 .list_item {
   border: 1px solid black;

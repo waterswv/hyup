@@ -1,0 +1,5 @@
+<%= content_for :title do %>Update Profile<% end %>
+
+<%= content_for :page_header do %>Update Your Profile<% end %>
+
+<%= render partial: "/helpers/user_form", locals: {user: @user, sub_button: "Update My Profile"} %>
