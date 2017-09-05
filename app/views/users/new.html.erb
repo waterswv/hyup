@@ -1,21 +1,25 @@
-<h3>Sign Up</h3>
+<%= content_for :title do %>Landlord Sign Up<% end %>
+
+<%= content_for :page_header do %>Landlord Sign Up<% end %>
 
 <%= form_for @new_user do |f| %>
-    <div>
-        <%= f.text_field :name, placeholder: "Full Name" %>
-    </div>
-    <div>
-      <%= f.text_field :phone, placeholder: "Phone Number" %>
-    </div>
-    <div>
-      <%= f.text_field :email, placeholder: "Email Address" %>
-    </div>
-    <div>
-      <%= f.password_field :password, placeholder: "Type Password" %>
-    </div>
-
-    <button class="btn waves-effect waves-light" type="submit" name="action"><%= f.submit "Sign Up" %>
-      <i class="material-icons right">send</i>
-    </button>
-
-  <% end %>
+<div class="input-field">
+    <%= f.text_field :name %>
+    <%= label_tag 'Full Name' %>
+</div>
+<div class="input-field">
+  <%= f.text_field :phone %>
+  <%= label_tag 'Phone Number' %>
+</div>
+<div class="input-field">
+  <%= f.email_field :email%>
+  <%= label_tag 'Email Address' %>
+</div>
+<div class="input-field">
+  <%= f.password_field :password %>
+  <%= label_tag 'Password' %>
+</div>
+<button class="btn waves-effect waves-light" type="submit" name="action">
+  <%= f.submit "Sign Up" %>
+</button>
+<% end %>
