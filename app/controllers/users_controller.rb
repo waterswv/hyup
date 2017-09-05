@@ -39,7 +39,7 @@ class UsersController < ApplicationController
     else
       @user = user
       flash[:error] = user.errors.full_messages.join("\n")
-      render(:action => "edit ")
+      render(:action => "edit")
     end
 
   end
