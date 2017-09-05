@@ -2,7 +2,6 @@ class ListingsController < ApplicationController
   def index
     @listings = Listing.all
     flash[:error] = "error message"
-
   end
 
   def new
@@ -40,5 +39,4 @@ class ListingsController < ApplicationController
     listing.destroy
     redirect_to listings_path
   end
-  
 end
