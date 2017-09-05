@@ -10,11 +10,12 @@ class UsersController < ApplicationController
     if user.save
       flash[:success] = "Successful login"
       session[:user_id] = user.id
-      redirect_to "/users/new"
-    end
+      redirect_to "/listings"
 
     else
-      flash[:error] = user.errors.full_messages
+      @new_user = user
+      flash[:error] = user.errors.full_messages.join(" ")
+      render('/users/new')
     end
 
   end
@@ -24,3 +25,4 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :phone, :email, :password)
   end
+end
