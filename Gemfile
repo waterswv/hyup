@@ -25,6 +25,8 @@ gem 'table_print', '~> 1.5.6'
 gem 'better_errors', '~> 2.1', '>= 2.1.1'
 # add paperclip gem for imagemagick
 gem 'paperclip', '~> 5.0.0'
+#add gravatar gem for user profile image
+gem 'gravtastic'
 
 gem 'binding_of_caller'
 gem 'coffee-rails', '~> 4.2'
