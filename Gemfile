@@ -5,7 +5,6 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
 # Use postgresql as the database for Active Record
@@ -49,8 +48,9 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
 
   gem 'selenium-webdriver'
-  #adds testing 
+  #adds testing
   gem 'rspec-rails', '~> 3.6'
+  gem 'rails-controller-testing'
 end
 
 
