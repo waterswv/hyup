@@ -14,6 +14,14 @@ class UsersController < ApplicationController
 
   end
 
+  def has_listing?
+    true
+  end
+
+  def getListing
+    16
+  end
+
   private
 
   def user_params

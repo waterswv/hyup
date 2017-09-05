@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   post "/listings", to: "listings#create"
   get "/listings/:id", to:"listings#show", as:"listing"
   get "/listings/:id/edit", to:"listings#edit", as:"edit_listing"
-  post "/listings/:id", to:"listing#update"
+  patch "/listings/:id", to:"listings#update"
   delete "/listings/:id", to:"listings#destroy"
 
   #signup form

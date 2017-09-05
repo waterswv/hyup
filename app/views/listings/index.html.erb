@@ -1,13 +1,17 @@
 <%= content_for :title do %>All Current Listings<% end %>
+
+<%= content_for :page_header do %>All Current Listings<% end %>
+
 <% @listings.each do |listing| %>
   <div class="row list_item">
     <div class="col s12">
-      <img src="http://www.sftodo.com/images/photo-contest/painted-ladies-san-francisco.jpg"
+      <img src="<%=listing.image.url(:medium) %>"
         alt="<%= listing.title %>" class="listing_img">
       <h5 class="listing_headline">
         <a href="<%= listing_path(listing.id) %>" class="listing_title" ><%= listing.title  %></a>
          - <%= number_to_currency(listing.rent) %>/mo.
       </h5>
+      <a data-method="delete" href="/listings/<%=listing.id%>"><i class="material-icons red-text">clear</i></a>
       <p><%= listing.address%></p>
       <p><span class="listing_bold">Available:</span> <%= listing.available_date  %> </p>
       <p class="listing_desc"><%= listing.description %></p>
@@ -18,5 +22,4 @@
       </p>
     </div>
   </div>
-
 <% end %>
