@@ -20,11 +20,14 @@
     <nav>
       <div class="nav-wrapper blue-grey lighten-1">
        <a href="#" class="brand-logo">Logo</a>
-
       <% render('/users/user_auth') %>
-
      </div>
     </nav>
+
+        <% flash.each do |name, msg| %>
+        <div><%= msg %></div>
+        <% end %>
+
     <div class="container">
       <%= render('/helpers/error_messages') %>
     <%= yield %>

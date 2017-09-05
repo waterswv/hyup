@@ -3,7 +3,7 @@
   <div class="row list_item">
     <div class="col s12">
       <img src="http://www.sftodo.com/images/photo-contest/painted-ladies-san-francisco.jpg"
-        alt="<%= @listings.title %>" class="listing_img">
+        alt="<%= listing.title %>" class="listing_img">
       <h5 class="listing_headline">
         <a href="<%= listing_path(listing.id) %>" class="listing_title" ><%= listing.title  %></a>
          - <%= number_to_currency(listing.rent) %>/mo.

@@ -13,5 +13,9 @@ Sign Up
     <div>
       <%= f.password_field :password, placeholder: "Type Password" %>
     </div>
-    <%= f.submit "Sign Up" %>
+
+    <button class="btn waves-effect waves-light" type="submit" name="action"><%= f.submit "Sign Up" %>
+      <i class="material-icons right">send</i>
+    </button>
+
   <% end %>
