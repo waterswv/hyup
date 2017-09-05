@@ -14,7 +14,7 @@ RSpec.describe ListingsController, type: :controller do
         picture_file_name: 'room-controller-valid.jpg',
         city: "San Francsico"
       }
-      post :create, params: { listing: listing_params    }
+      post :create, params: { listing: listing_params  }
       expect(Listing.count).to eq(1)
     end
   end
