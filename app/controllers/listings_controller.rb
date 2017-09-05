@@ -27,6 +27,7 @@ class ListingsController < ApplicationController
   end
 
   def update
+    listing_params = params.require(:listing).permit(:address, :title, :rent, :available_date, :description, :contact_phone, :contact_email, :image, :city)
     listing_id = params[:id]
     listing = Listing.find_by_id(listing_id)
     listing.update_attributes(listing_params)
@@ -40,5 +41,5 @@ class ListingsController < ApplicationController
     listing.destroy
     redirect_to listings_path
   end
-  
+
 end
