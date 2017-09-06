@@ -1,5 +1,5 @@
 body {
-  font-family: fantasy;
+  font-family: Oxygen, sans-serif;
   font-size: 16px;
   font-weight: 300;
   color: #222;
@@ -46,7 +46,7 @@ header {
   border-radius: 10px;
   background-size: cover;
   background-position: top;
-  background-image: url("http://www.sftravel.com/sites/sftraveldev.prod.acquia-sites.com/files/SanFrancisco_0.jpg");
+  /*background-image: url("http://www.sftravel.com/sites/sftraveldev.prod.acquia-sites.com/files/SanFrancisco_0.jpg");*/
 
 }
 
@@ -132,12 +132,14 @@ p.listing_show {
   float: left;
   margin-right: 7px;
   margin-bottom: 3px;
+  border-radius: 25px;
 }
 
 .listing_img_show {
   height: 450px;
   margin-right: 15px;
   margin-bottom: 10px;
+  border-radius: 25px;
 }
 
 a {
