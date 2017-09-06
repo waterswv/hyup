@@ -11,7 +11,11 @@
 # It's strongly recommended that you check this file into your version control system.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20170906180141) do
+=======
+ActiveRecord::Schema.define(version: 20170906171751) do
+>>>>>>> 42340c262833864fb96b301d6ba631f0a6705383
 =======
 ActiveRecord::Schema.define(version: 20170906171751) do
 >>>>>>> 42340c262833864fb96b301d6ba631f0a6705383
@@ -35,7 +39,12 @@ ActiveRecord::Schema.define(version: 20170906171751) do
     t.integer "image_file_size"
     t.datetime "image_updated_at"
 <<<<<<< HEAD
+<<<<<<< HEAD
     t.bigint "user_id"
+=======
+    t.float "longitude"
+    t.float "latitude"
+>>>>>>> 42340c262833864fb96b301d6ba631f0a6705383
 =======
     t.float "longitude"
     t.float "latitude"
