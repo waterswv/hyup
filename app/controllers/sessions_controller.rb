@@ -17,7 +17,14 @@ class SessionsController < ApplicationController
       end
     end
 
+    #def delete_session
+    #  session[:user_id] = nil
+    # end
     #
+
+
+
+
     #   user = User.find_by_email(params[:email])
     #   # If the user exists AND the password entered is correct.
     #   if user && user.authenticate(params[:password])

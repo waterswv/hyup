@@ -1,0 +1,18 @@
+<%= content_for :title do %><%= @user.name %><% end %>
+
+<%= content_for :page_header do %>My Profile<% end %>
+
+
+<div class="row">
+  <div class="col s12">
+    <img class="user_gravatar" src="http://foordmasonry.com/images/userphotos/default.jpg">
+      <p class="user_name_show"> <%= @user.name %> </p>
+      <p class="user_email_show"> <%= @user.email %> </p>
+      <p class="user_phone_show"> <%= @user.phone %> </p>
+
+      <button class="btn waves-effect waves-light" type="button" name="edit">
+        <%= link_to "Edit Profile", edit_user_path(@user) %>
+      </button>
+
+  </div>
+</div>
