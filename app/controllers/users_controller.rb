@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     user = User.new(user_params)
     if user.save
       flash[:success] = "Your profile has been created successfully"
-      session[:user_id] = user.id
+      session[:user_id] = user.id #Todo fix this
       #redirect_to user_path(user)
       redirect_to user_path(user)
     else
@@ -19,12 +19,12 @@ class UsersController < ApplicationController
 
   end
 
-  def edit
+  def show
     user_id = params[:id]
     @user = User.find_by_id(user_id)
   end
 
-  def show
+  def edit
     user_id = params[:id]
     @user = User.find_by_id(user_id)
   end

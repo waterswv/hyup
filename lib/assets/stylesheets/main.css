@@ -62,6 +62,15 @@ nav {
   background-color: transparent;
 }
 
+nav ul a {
+  padding: 0px 7px;
+  letter-spacing: -2;
+}
+
+nav ul li:nth-last-child(2) {
+  margin-right: 15px;
+}
+
 .logo {
   border-radius: 10px;
   width: 125px;
@@ -69,6 +78,7 @@ nav {
 
 .chip img {
   float: left;
+  align-self: center;
   margin: 0 8px 0 -28px;
   height: 32px;
   width: 32px;

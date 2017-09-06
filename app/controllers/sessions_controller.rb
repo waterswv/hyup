@@ -10,10 +10,10 @@ class SessionsController < ApplicationController
 
       if @user
          session[:user_id] = @user.id
-         p session[:user_id]
-         redirect_to '/users/new'
+         session[:listing_id] = @user.listing.id || 0
+         redirect_to listings_path
       else
-        redirect_to '/login'
+        redirect_to login_path
       end
     end
 
