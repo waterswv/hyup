@@ -7,13 +7,17 @@
         Inquire
         <i class="material-icons right">mail</i>
       </button>
-      <%= image_tag("google_map_mock.png", class: "listing_google_map_show", alt: @listing.address) %>
+      <br></br>
+      <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@listing.latitude},#{@listing.longitude}&markers=#{@listing.latitude},#{@listing.longitude}&zoom=13&size=250x250&key=AIzaSyA4BHW3txEdqfxzdTlPwaHsYRSZbfeIcd8",
+              class: 'img-fluid img-rounded', alt: "#{@listing.title} on the map"%>
+      <p>Coordinates: <%= @listing.latitude %> <%= @listing.longitude %></p>
     </div>
     <div class="listing_left_column_show">
       <h2 class="listing_headline">
         <span class="listing_title_show"><%= @listing.title  %></span>
         - <%= number_to_currency(@listing.rent) %>/mo.
       </h2>
+      <br></br>
       <img src="<%=@listing.image.url(:medium) %>"
       </div>
       <p class="listing_show"><%= @listing.address%></p>
