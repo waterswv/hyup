@@ -27,6 +27,9 @@ gem 'paperclip', '~> 5.0.0'
 #add gravatar gem for user profile image
 gem 'gravtastic'
 
+# add geocoder gem
+gem 'geocoder'
+
 gem 'binding_of_caller'
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
