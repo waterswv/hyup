@@ -11,5 +11,8 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require turbolinks
+//= require jquery.turbolinks
 //= require_tree .
+$(function() {
+  $(".button-collapse").sideNav();
+});
