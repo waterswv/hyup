@@ -30,6 +30,9 @@ gem 'gravtastic'
 # add geocoder gem
 gem 'geocoder'
 
+# add jquery turbolinks
+gem 'jquery-turbolinks'
+
 gem 'binding_of_caller'
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
