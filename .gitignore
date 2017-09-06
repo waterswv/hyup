@@ -20,6 +20,3 @@
 
 # Ignore all images in public files
 /public
-
-#Ignore schema.rb
-schema.rb
