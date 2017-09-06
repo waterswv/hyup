@@ -1,4 +1,6 @@
 class Listing < ApplicationRecord
+  geocoded_by :address
+  after_validation :geocode 
   has_attached_file :image, styles: { large: "450x450>", medium: "300x300>", thumb: "100x100#"}
   belongs_to :user
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/

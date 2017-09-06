@@ -78,6 +78,7 @@ GEM
     execjs (2.7.0)
     ffaker (2.6.0)
     ffi (1.9.18)
+    geocoder (1.4.4)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     gravtastic (3.2.6)
@@ -226,6 +227,7 @@ DEPENDENCIES
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
   ffaker (~> 2.6.0)
+  geocoder
   gravtastic
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)

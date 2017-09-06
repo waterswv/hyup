@@ -25,6 +25,8 @@ class ListingsController < ApplicationController
   def show
     listing_id = params[:id]
     @listing = Listing.find_by_id(listing_id)
+    puts @listing.longitude
+    puts @listing.latitude
   end
 
   def edit
@@ -39,7 +41,9 @@ class ListingsController < ApplicationController
       flash[:success] = "Your listing has been updated successfully"
       redirect_to listing_path(@listing)
     else
-      flash[:error] = @listing.errors.full_messages.join("\n")
+      listing = @listing
+      flash[:error] = listing.errors.full_messages.join("\n")
+      render(edit_listing_path)
     end
   end
 
