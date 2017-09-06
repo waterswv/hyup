@@ -1,8 +1,9 @@
 class User < ApplicationRecord
   has_secure_password
+  has_one :listing, dependent: :destroy 
 
   include Gravtastic
-  gravtastic 
+  gravtastic
 
 #validations
   validates :name, presence: true

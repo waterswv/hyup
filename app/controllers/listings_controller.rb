@@ -8,10 +8,18 @@ class ListingsController < ApplicationController
   end
 
   def create
-    listing = Listing.new(listing_params)
+    user_id = session[:user_id]
+    listing = Listing.create(listing_params)
+    listing.user_id = user_id
     if listing.save
+      flash[:success] = "Your listing was created successfully"
       redirect_to listing_path(listing)
+    else
+      @listing = listing
+      flash[:error] = listing.errors.full_messages.join("\n")
+      render(new_listing_path)
     end
+
   end
 
   def show
@@ -39,7 +47,7 @@ class ListingsController < ApplicationController
   end
 
   private
-  
+
   def listing_params
     params.require(:listing).permit(:address, :title, :rent, :available_date, :description, :contact_phone, :contact_email, :image, :city)
   end
