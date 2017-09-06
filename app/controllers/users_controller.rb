@@ -48,8 +48,9 @@ class UsersController < ApplicationController
     user_id = params[:id]
     user = User.find_by_id(user_id)
     user.destroy
+    delete_session
     flash[:success] = "Your profile has been deleted"
-    redirect_to '/listings'
+    redirect_to listings_path
   end
 
 
