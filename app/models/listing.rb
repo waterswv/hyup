@@ -5,6 +5,6 @@ class Listing < ApplicationRecord
   belongs_to :user
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
   validates :address, :title, :rent, :available_date, :description, :contact_phone, :contact_email, presence: true
-  validates :phone, numericality: true, length: {minimum: 10, maximum: 15}
+  validates :contact_phone, numericality: true, length: {minimum: 10, maximum: 15}
 
 end
