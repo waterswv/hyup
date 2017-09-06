@@ -1,7 +1,12 @@
+<li><a href="<%= listings_path %>">All Listings</a></li>
 <% if current_user %>
-  <li><a href="<%= listings_path %>">All Listings</a></li>
-  <li><a href="/listing/<%= current_user.id %>/edit">My Property Listing</a></li>
-  <li><a href="/users/<%= current_user.id %>">My Landlord Profile</a></li>
+  <% if session[:listing_id] %>
+    <li><a href="/listings/<%= session[:listing_id] %>/show">View My Listing</a></li>
+    <li><a href="/listings/<%= session[:listing_id] %>/edit">Update My Listing</a></li>
+  <% else %>
+    <li><a href="/listings/new">List My Property</a></li>
+  <% end %>
+  <li><a href="/users/<%= current_user.id %>">My Profile</a></li>
   <li><a href="/logout">Logout</a></li>
   <li class="chip">
     <a href="/users/<%= current_user.id %>">
@@ -10,6 +15,6 @@
     </a>
   </li>
 <% else %>
-  <li><a href="/users/new">Sign Up to list your property</a></li>
+  <li><a href="/users/new">Landlord Sign-up</a></li>
   <li><a href="/login">Landlord Login</a></li>
 <% end %>

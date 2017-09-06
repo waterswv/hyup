@@ -9,9 +9,10 @@ class ListingsController < ApplicationController
 
   def create
     user_id = session[:user_id]
-    listing = Listing.create(listing_params)
+    listing = Listing.new(listing_params)
     listing.user_id = user_id
     if listing.save
+      add_listing_to_session
       flash[:success] = "Your listing was created successfully"
       redirect_to listing_path(listing)
     else
@@ -25,8 +26,6 @@ class ListingsController < ApplicationController
   def show
     listing_id = params[:id]
     @listing = Listing.find_by_id(listing_id)
-    puts @listing.longitude
-    puts @listing.latitude
   end
 
   def edit
@@ -36,14 +35,14 @@ class ListingsController < ApplicationController
 
   def update
     listing_id = params[:id]
-    @listing = Listing.find_by_id(listing_id)
-    if @listing.update_attributes(listing_params)
+    listing = Listing.find_by_id(listing_id)
+    if listing.update_attributes(listing_params)
       flash[:success] = "Your listing has been updated successfully"
-      redirect_to listing_path(@listing)
+      redirect_to listing_path(listing)
     else
-      listing = @listing
+      @listing = listing
       flash[:error] = listing.errors.full_messages.join("\n")
-      render(edit_listing_path)
+      render(:action => "edit")
     end
   end
 
@@ -52,6 +51,8 @@ class ListingsController < ApplicationController
     listing_id = params[:id]
     listing = Listing.find_by_id(listing_id)
     listing.destroy
+    destroy_listing_in_session
+    flash[:success] = "Your listing has been deleted"
     redirect_to listings_path
   end
 

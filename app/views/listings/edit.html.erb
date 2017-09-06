@@ -34,7 +34,7 @@
   </div>
   <div class="row">
     <div class="input-field col s4">
-      <%= f.text_field :contact_phone %>
+      <%= f.telephone_field :contact_phone %>
       <%= label_tag 'Contact Phone' %>
     </div>
     <div class="input-field col s4">
@@ -60,7 +60,7 @@
     </div>
   </div>
 
-  <button class="btn waves-effect waves-light" type="submit" name="action" data-turbolinks="false"><%= f.submit "Create Listing" %>
-    <i class="material-icons right">send</i>
+  <button class="btn waves-effect waves-light" type="submit" name="action" data-turbolinks="false">
+    <%= f.submit "Update Listing" %><i class="material-icons right">send</i>
   </button>
 <% end %>
