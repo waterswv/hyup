@@ -7,24 +7,31 @@
         Inquire
         <i class="material-icons right">mail</i>
       </button>
-      <%= image_tag("google_map_mock.png", class: "listing_google_map_show", alt: @listing.address) %>
+      <span><a class="btn-floating btn-large waves-effect waves-light red" data-method="delete" href="/listings/<%=@listing.id%>"><i class="material-icons">delete</i></a></span>
+      <br></br>
+      <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@listing.latitude},#{@listing.longitude}&markers=#{@listing.latitude},#{@listing.longitude}&zoom=15&size=250x250&key=AIzaSyA4BHW3txEdqfxzdTlPwaHsYRSZbfeIcd8",
+              class: 'img-fluid img-rounded', alt: "#{@listing.title} on the map"%>
+      <p>Coordinates: <%= @listing.latitude %> <%= @listing.longitude %></p>
     </div>
     <div class="listing_left_column_show">
       <h2 class="listing_headline">
         <span class="listing_title_show"><%= @listing.title  %></span>
         - <%= number_to_currency(@listing.rent) %>/mo.
       </h2>
-      <img src="<%=@listing.image.url(:medium) %>"
+      <br></br>
+      <img style="border-radius: 25px"src="<%=@listing.image.url(:medium) %>"
       </div>
-      <p class="listing_show"><%= @listing.address%></p>
-      <p class="listing_show"><span class="listing_bold">Available:</span> <%= @listing.available_date  %> </p>
-      <p class="listing_desc_show"><%= @listing.description %></p>
-      <p class="listing_contact_show">
-        <span class="listing_bold">If interested contact:</span>
-        <a href="mailto:<%= @listing.contact_email %>" class="listing_email"><%= @listing.contact_email %></a>,
-        (<%= @listing.contact_phone %>)
-      </p>
+      <div class="listing-content" style="margin: 5px 0px 0px 5px">
+
+        <p class="listing_show"><%= @listing.address%></p>
+        <p class="listing_show"><span class="listing_bold">Available:</span> <%= @listing.available_date  %> </p>
+        <p class="listing_desc_show"><%= @listing.description %></p>
+        <p class="listing_contact_show">
+          <span class="listing_bold">If interested contact:</span>
+          <a href="mailto:<%= @listing.contact_email %>" class="listing_email"><%= @listing.contact_email %></a>,
+          (<%= @listing.contact_phone %>)
+        </p>
     </div>
-    <a class="btn-floating btn-large waves-effect waves-light red" data-method="delete" href="/listings/<%=@listing.id%>"><i class="material-icons">delete</i></a>
+    </div>
   </div>
 </div>
