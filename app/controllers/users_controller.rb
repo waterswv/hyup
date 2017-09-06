@@ -10,11 +10,11 @@ class UsersController < ApplicationController
       flash[:success] = "Your profile has been created successfully"
       session[:user_id] = user.id
       #redirect_to user_path(user)
-      redirect_to '/listings'
+      redirect_to user_path(user)
     else
       @user = user
       flash[:error] = user.errors.full_messages.join("\n")
-      render('/users/new')
+      render(new_user_path)
     end
 
   end

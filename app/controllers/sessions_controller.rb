@@ -17,9 +17,9 @@ class SessionsController < ApplicationController
       end
     end
 
-    #def delete_session
-    #  session[:user_id] = nil
-    # end
+    def delete_session
+      session[:user_id] = nil
+     end
     #
 
 
