@@ -1,6 +1,6 @@
 <%= content_for :title do %>Create Listing<% end %>
 
-<%= content_for :page_header do %>All Current Listings<% end %>
+<%= content_for :page_header do %>Create Listing<% end %>
 
 
   <%= form_for @listing do |f| %>
@@ -60,9 +60,9 @@
       </div>
     </div>
     <div class="row">
-      
+
       <div class="input-field col s12">
-        <button class="btn waves-effect waves-light" type="submit" name="action">
+        <button class="btn waves-effect waves-light" type="submit" name="action" data-turbolinks="false">
           <%= f.submit "Create Listing" %><i class="material-icons right">send</i>
         </button>
       </div>

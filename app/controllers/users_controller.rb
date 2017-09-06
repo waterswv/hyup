@@ -10,11 +10,11 @@ class UsersController < ApplicationController
       flash[:success] = "Your profile has been created successfully"
       session[:user_id] = user.id
       #redirect_to user_path(user)
-      redirect_to '/listings'
+      redirect_to user_path(user)
     else
       @user = user
       flash[:error] = user.errors.full_messages.join("\n")
-      render('/users/new')
+      render(new_user_path)
     end
 
   end
@@ -35,11 +35,11 @@ class UsersController < ApplicationController
     if user.update_attributes(user_params)
       flash[:success] = "Your profile has been updated successfully"
       #redirect_to user_path(user)
-      redirect_to '/listings'
+      redirect_to listings_path
     else
       @user = user
       flash[:error] = user.errors.full_messages.join("\n")
-      render(:action => "edit ")
+      render(:action => "edit")
     end
 
   end
@@ -48,8 +48,9 @@ class UsersController < ApplicationController
     user_id = params[:id]
     user = User.find_by_id(user_id)
     user.destroy
+    delete_session
     flash[:success] = "Your profile has been deleted"
-    redirect_to '/listings'
+    redirect_to listings_path
   end
 
 
