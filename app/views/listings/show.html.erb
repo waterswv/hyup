@@ -8,7 +8,7 @@
         <i class="material-icons right">mail</i>
       </button>
       <br></br>
-      <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@listing.latitude},#{@listing.longitude}&markers=#{@listing.latitude},#{@listing.longitude}&zoom=13&size=250x250&key=AIzaSyA4BHW3txEdqfxzdTlPwaHsYRSZbfeIcd8",
+      <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@listing.latitude},#{@listing.longitude}&markers=#{@listing.latitude},#{@listing.longitude}&zoom=15&size=250x250&key=AIzaSyA4BHW3txEdqfxzdTlPwaHsYRSZbfeIcd8",
               class: 'img-fluid img-rounded', alt: "#{@listing.title} on the map"%>
       <p>Coordinates: <%= @listing.latitude %> <%= @listing.longitude %></p>
     </div>
