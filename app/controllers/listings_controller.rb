@@ -17,6 +17,8 @@ class ListingsController < ApplicationController
   def show
     listing_id = params[:id]
     @listing = Listing.find_by_id(listing_id)
+    puts @listing.longitude
+    puts @listing.latitude
   end
   def edit
     listing_id = params[:id]
