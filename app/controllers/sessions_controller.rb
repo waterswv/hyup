@@ -17,11 +17,6 @@ class SessionsController < ApplicationController
       end
     end
 
-    def delete_session
-      session[:user_id] = nil
-     end
-    #
-
 
 
 
@@ -38,10 +33,13 @@ class SessionsController < ApplicationController
     #   end
     # end
 
+#destroys session
     def destroy
-      session[:user_id] = nil
-      redirect_to '/login'
+      delete_session
+      flash[:notice] = "You have been logged out"
+      redirect_to login_path
     end
+
 
 
 end

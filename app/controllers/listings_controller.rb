@@ -9,22 +9,24 @@ class ListingsController < ApplicationController
 
   def create
     user_id = session[:user_id]
-    user = User.find_by_id(user_id)
-    if user
-      listing = user.listings.create(listing_params)
-      if listing.save
-        redirect_to listing_path(listing)
-      end
+    listing = Listing.create(listing_params)
+    listing.user_id = user_id
+    if listing.save
+      flash[:success] = "Your listing was created successfully"
+      redirect_to listing_path(listing)
+    else
+      @listing = listing
       flash[:error] = listing.errors.full_messages.join("\n")
+      render(new_listing_path)
     end
-    flash[:error] = 'Your user profile was not found.'
+
   end
 
   def show
     listing_id = params[:id]
     @listing = Listing.find_by_id(listing_id)
   end
-  
+
   def edit
     listing_id = params[:id]
     @listing = Listing.find_by_id(listing_id)

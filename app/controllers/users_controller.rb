@@ -35,7 +35,7 @@ class UsersController < ApplicationController
     if user.update_attributes(user_params)
       flash[:success] = "Your profile has been updated successfully"
       #redirect_to user_path(user)
-      redirect_to '/listings'
+      redirect_to listings_path
     else
       @user = user
       flash[:error] = user.errors.full_messages.join("\n")
@@ -48,8 +48,9 @@ class UsersController < ApplicationController
     user_id = params[:id]
     user = User.find_by_id(user_id)
     user.destroy
+    delete_session
     flash[:success] = "Your profile has been deleted"
-    redirect_to '/listings'
+    redirect_to listings_path
   end
 
 
