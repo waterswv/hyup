@@ -25,6 +25,7 @@
 
 
 
+
 #### Google Maps API
 - Google maps was incorporated into this app to pinpoint each listing location from the longitude and latitude of the address provided by the landlord.
 
@@ -34,7 +35,6 @@ class: 'img-fluid img-rounded', alt: "#{@listing.title} on the map"%>
 <p>Coordinates: <%= @listing.latitude %> <%= @listing.longitude %></p>
 ```
 
-# <img src="/images/maps.jpg" width="60">
 
 #### RSpec-rails
 - The RSpec-rails testing framework was used in this app to test for controllers listing testing for the `CREATE` and `GET` methods.
@@ -64,7 +64,9 @@ RSpec.describe UsersController, type: :controller do
   end
 end
 ```
+# <img src="/images/listings.jpg" width="60">
 
+- Image of the listings in San Francisco posted by landlords
 
 #### Planned Features
 - Have both tenants and landlords acquire a login with a profile
