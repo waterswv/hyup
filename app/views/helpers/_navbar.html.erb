@@ -1,17 +1,12 @@
 
 <nav>
+  <%# large screen only %>
   <ul id="nav-mobile" class="right hide-on-med-and-down">
     <%= render('/helpers/nav_links') %>
   </ul>
-  <ul id="slide-out" class="side-nav">
+  <%# mobile and medium screen only %>
+  <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+  <ul class="side-nav blue-grey lighten-0" id="mobile-demo">
     <%= render('/helpers/nav_links') %>
-  </ul>
-<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-
-<ul class="side-nav" id="mobile-demo">      
-      <li><a href="/listings">All Listings</a></li>
-      <li><a href="/listing/1/edit">My Property Listing</a></li>
-      <li><a href="/users/1">My Landlord Profile</a></li>
-      <li><a href="/logout">Logout</a></li>
   </ul>
 </nav>
