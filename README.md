@@ -64,7 +64,7 @@ RSpec.describe UsersController, type: :controller do
   end
 end
 ```
-# <img src="/images/listings.jpg" width="60">
+# <img src="/images/listings.jpg">
 
 - Image of the listings in San Francisco posted by landlords
 
