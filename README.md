@@ -1,6 +1,6 @@
 # README
 
-# <img src="/images/hyup.jpg" width="60">
+# <img src="/images/hyup.jpg">
 
 ## Welcome to HYUP - Housing for the rest of us
 
