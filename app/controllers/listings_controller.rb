@@ -1,9 +1,9 @@
 class ListingsController < ApplicationController
   include ListingsHelper
 
-  before_action :get_listing_from_id, only: [:show, :edit, :destroy, :update]
   before_action :is_authorized?, only: [:new, :create, :edit, :update, :destroy]
   before_action :is_listing_owner?, only: [:edit, :update, :destroy]
+  before_action :get_listing_from_id, only: [:show, :edit, :destroy, :update]
 
   def index
     @listings = Listing.all
