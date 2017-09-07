@@ -1,6 +1,6 @@
 # README
 
-![](/images/hyup.jpg =100x20)
+# <img src="../public/images/hyup.jpg" width="60">
 
 ## Welcome to HYUP - Housing for the rest of us
 
@@ -9,16 +9,23 @@
 ### Overview
 - Hyup is multi-page webapp that aims to connect new or existing residents of San Francisco with Landlords that have housing available around the city.
 
-####Technical details
+
+#### Technical details
 * Rails -v 5.1
 * jQuery
 * materializecss
 * Postgresql with ActiveRecord
 * Google fonts
 * rspec-rails
+* paperclip
+* table print
+* geocoder
+* jquery-turbolinks
+* bcrypt
 
 
-####Google Maps API
+
+#### Google Maps API
 - Google maps was incorporated into this app to pinpoint each listing location from the longitude and latitude of the address provided by the landlord.
 
 
@@ -27,9 +34,39 @@ class: 'img-fluid img-rounded', alt: "#{@listing.title} on the map"%>
 <p>Coordinates: <%= @listing.latitude %> <%= @listing.longitude %></p>
 ```
 
-![](/images/maps.jpg =100x20)
+# <img src="../public/images/maps.jpg" width="60">
 
-####Planned Features
-- Have all users acquire a login with a profile
+#### RSpec-rails
+- The RSpec-rails testing framework was used in this app to test for controllers listing testing for the `CREATE` and `GET` methods.
+- Others tested in RSpec:
+        - Controller user: CREATE
+        - Models: Listing contact phone
+        - Models: User email
+
+
+- The following code tests for the `CREATE` method when creating a new user.
+
+```
+require 'rails_helper'
+
+RSpec.describe UsersController, type: :controller do
+  describe "#create" do
+    it "creates new user" do
+      user_params = {
+        name: "Joe Blow",
+        email: "hungey@eye.com",
+        password:"1234",
+        phone:"4151234567"
+      }
+      post :create, params: { user: user_params}
+      expect(User.count).to eq(1)
+    end
+  end
+end
+```
+
+
+#### Planned Features
+- Have both tenants and landlords acquire a login with a profile
 - Add more cities
 - Create "tags" or hobbies for users to find other users with the same or similar tags
