@@ -1,6 +1,6 @@
 # README
 
-# <img src="../images/hyup.jpg" width="60">
+# <img src="/images/hyup.jpg" width="60">
 
 ## Welcome to HYUP - Housing for the rest of us
 
@@ -34,7 +34,7 @@ class: 'img-fluid img-rounded', alt: "#{@listing.title} on the map"%>
 <p>Coordinates: <%= @listing.latitude %> <%= @listing.longitude %></p>
 ```
 
-# <img src="../images/maps.jpg" width="60">
+# <img src="/images/maps.jpg" width="60">
 
 #### RSpec-rails
 - The RSpec-rails testing framework was used in this app to test for controllers listing testing for the `CREATE` and `GET` methods.
