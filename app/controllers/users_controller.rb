@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
   include UsersHelper
 
-  before_action :get_user_from_id, only: [:show, :edit, :destroy, :update]
   before_action :is_authorized?, only: [:edit, :update, :destroy]
   before_action :is_accessing_self?, only: [:show, :edit, :destroy]
+  before_action :get_user_from_id, only: [:show, :edit, :destroy, :update]
 
   def new
     @user = User.new
