@@ -1,18 +1,16 @@
 <%= content_for :title do %><%= @user.name %><% end %>
 
-<%= content_for :page_header do %>My Profile<% end %>
-
-
 <div class="row">
   <div class="col s12">
     <img class="user_gravatar" src="http://foordmasonry.com/images/userphotos/default.jpg">
-      <p class="user_name_show"> <%= @user.name %> </p>
-      <p class="user_email_show"> <%= @user.email %> </p>
-      <p class="user_phone_show"> <%= @user.phone %> </p>
-
-      <button class="btn waves-effect waves-light" type="button" name="edit">
-        <%= link_to "Edit Profile", edit_user_path(@user) %>
-      </button>
-
+    <span class="user_name_show"> <%= @user.name %> </span>
+    <%= link_to edit_user_path(@user), class: "btn-floating btn-md waves-effect waves-light red btn-user" do %>
+      <i class="material-icons">edit</i>
+    <% end %>
+    <%= link_to @user, :method => :delete, class: "btn-floating btn-md waves-effect waves-light red btn-user", :data => {confirm: "Are you sure you want to delete your profile and your listing?",  turbolinks: "false" } do %>
+      <i class="material-icons">delete</i>
+    <% end %>
+    <p class="user_show"> <%= @user.email %> </p>
+    <p class="user_show"> <%= @user.phone %> </p>
   </div>
 </div>

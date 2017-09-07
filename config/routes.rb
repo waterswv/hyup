@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get "/listings/:id", to:"listings#show", as:"listing"
   get "/listings/:id/edit", to:"listings#edit", as:"edit_listing"
   patch "/listings/:id", to:"listings#update"
-  delete "/listings/:id", to:"listings#destroy"
+  delete "/listings/:id", to:"listings#destroy", as:"destroy_listing"
 
   #signup form
   get "/users/new", to: "users#new", as:"new_user"

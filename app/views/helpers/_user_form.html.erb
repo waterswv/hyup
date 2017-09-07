@@ -17,12 +17,8 @@
       <%= label_tag 'Password' %>
     </div>
   <% end %>
-  <button class="btn waves-effect waves-light" type="submit" name="action" data-turbolinks="false">
-    <%= f.submit sub_button %>
+
+  <button class="btn waves-effect waves-light right" type="submit" name="action" data-turbolinks="false">
+    <%= f.submit sub_button %><i class="material-icons right">send</i>
   </button>
-  <% if user.id %>
-    <button class="btn waves-effect waves-light" type="button" name="destroy">
-      <%= link_to "delete", user_path(user), :method => :delete %>
-    </button>
-  <% end %>
 <% end %>

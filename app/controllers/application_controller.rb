@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  #before_filter :store_previous_action
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
@@ -17,7 +18,7 @@ class ApplicationController < ActionController::Base
   def add_listing_to_session
     user = User.find_by_id(session[:user_id])
     if user
-      session[:listing_id] = user.listing.id
+      session[:listing_id] = user.listing.id if user.listing
     end
   end
 
@@ -26,4 +27,14 @@ class ApplicationController < ActionController::Base
    destroy_listing_in_session
   end
 
+  def is_authorized?
+    if !current_user
+      flash[:error] = "You must be logged in to view that page"
+      redirect_to login_path
+    end
+  end
+
+  def custom_redirect_back
+    redirect_back(fallback_location: root_path)
+  end
 end

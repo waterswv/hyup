@@ -1,0 +1,61 @@
+<%= form_for @listing do |f| %>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <%= f.text_field :title, :class => "validate", :required => "" %>
+      <%= label_tag 'title' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12 l6">
+    <%= f.text_field :rent, :class => "validate", :required => "" %>
+    <%= label_tag 'Rent' %>
+  </div>
+    <div class="input-field col s12 l6">
+      <%= f.text_field :available_date, :class => "validate", :required => "" %>
+        <%= label_tag 'Available Date' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <%= f.text_field :address, :class => "validate", :required => "" %>
+      <%= label_tag 'Address' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <%= f.text_area :description, :class => "materialize-textarea", :class => "validate", :required => "" %>
+      <%= label_tag 'Description' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12 l6">
+      <%= f.text_field :contact_phone %>
+      <%= label_tag 'Contact Phone' %>
+    </div>
+    <div class="input-field col s12 l6">
+      <%= f.email_field :contact_email, :class => "validate", :required => "" %>
+      <%= label_tag 'Contact Email' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <div class="file-field input-field">
+        <div class="btn waves-effect waves-light">
+          <span>Upload Image</span>
+          <%= f.file_field :image, accept: 'image/png,image/gif,image/jpeg' %>
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <button class="btn waves-effect waves-light right" type="submit" name="action" data-turbolinks="false">
+        <%= f.submit sub_button %><i class="material-icons right">send</i>
+      </button>
+    </div>
+  </div>
+<% end %>

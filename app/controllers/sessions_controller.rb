@@ -1,45 +1,25 @@
 class SessionsController < ApplicationController
   # app/controllers/sessions_controller.rb
-    def new
-      @user = User.new
+  def new
+    @user = User.new
+  end
+
+  def create
+    user_params = params.require(:user).permit(:email, :password)
+    user = User.confirm(user_params)
+    if user
+       session[:user_id] = user.id
+       add_listing_to_session
+       redirect_to listings_path
+    else
+      flash[:error] = "Your login information was not correct"
+      custom_redirect_back
     end
+  end
 
-    def create
-      user_params = params.require(:user).permit(:email, :password)
-      @user = User.confirm(user_params)
-
-      if @user
-         session[:user_id] = @user.id
-         session[:listing_id] = @user.listing.id || 0
-         redirect_to listings_path
-      else
-        redirect_to login_path
-      end
-    end
-
-
-
-
-    #   user = User.find_by_email(params[:email])
-    #   # If the user exists AND the password entered is correct.
-    #   if user && user.authenticate(params[:password])
-    #     # Save the user id inside the browser cookie. This is how we keep the user
-    #     # logged in when they navigate around our website.
-    #     session[:user_id] = user.id
-    #     redirect_to '/users/new'
-    #   else
-    #     # flash.alert = "We're not failures"
-    #     redirect_to '/login'
-    #   end
-    # end
-
-#destroys session
-    def destroy
-      delete_session
-      flash[:notice] = "You have been logged out"
-      redirect_to login_path
-    end
-
-
-
+  def destroy
+    delete_session
+    flash[:notice] = "You have been logged out"
+    redirect_to login_path
+  end
 end

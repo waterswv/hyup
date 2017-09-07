@@ -13,5 +13,6 @@
  *= require_tree .
  *= require_self
  *= require reset.css
+ *= require clear_fix.css
  *= require main.css
  */
